@@ -1,0 +1,44 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "typecheck": "tsc",
+    "lint": "eslint src",
+    "postinstall": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@mantine/core": "^7.11.2",
+    "@skip-go/widget": "^1.2.5",
+    "@tanstack/react-query": "^5.51.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tsconfig/vite-react": "^3.0.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "eslint": "^8.56.0",
+    "eslint-config-react-app": "^7.0.1",
+    "lint-staged": "^15.2.7",
+    "postcss": "^8.4.39",
+    "postcss-preset-mantine": "^1.15.0",
+    "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.3.3",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
+    "vite-plugin-node-polyfills": "^0.22.0",
+    "vitest": "^2.0.3"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "src/**/*.{ts,tsx}": "eslint --max-warnings=0"
+  },
+  "name": "test-skip-widget"
+}
